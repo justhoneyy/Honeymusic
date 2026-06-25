@@ -14,7 +14,7 @@ def create_app(config_class=Config):
 
     # Project root (Honeymusic/)
     BASE_DIR = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", "..", "..")
+        os.path.join(os.path.dirname(__file__), "..", "..")
     )
 
     # Frontend folder
