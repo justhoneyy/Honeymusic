@@ -6,7 +6,7 @@ from app.models.playlist import Like
 from app.services.music_service import MusicService
 from app.utils.helpers import create_response, paginate
 
-music_bp = Blueprint('api.music', __name__)
+music_bp = Blueprint('music', __name__)
 
 @music_bp.route('/songs', methods=['GET'])
 def get_songs():
