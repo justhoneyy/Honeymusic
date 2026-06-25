@@ -3,7 +3,7 @@ from sqlalchemy import or_
 from app.models.music import Song, Album, Artist, Genre, Podcast
 from app.utils.helpers import create_response
 
-search_bp = Blueprint('api.search', __name__)
+search_bp = Blueprint('search', __name__)
 
 @search_bp.route('', methods=['GET'])
 def search():
