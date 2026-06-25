@@ -23,7 +23,7 @@ Werkzeug==3.0.3
 python-dotenv==1.0.1
 
 # Image/File Processing
-Pillow==10.3.0
+Pillow==11.3.0
 python-magic==0.4.27
 mutagen==1.47.0
 
