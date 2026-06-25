@@ -5,7 +5,7 @@ from app.models.playlist import Playlist, PlaylistSong
 from app.models.music import Song
 from app.utils.helpers import create_response
 
-playlists_bp = Blueprint('api.playlists', __name__)
+playlists_bp = Blueprint('playlists', __name__)
 
 @playlists_bp.route('', methods=['GET'])
 @jwt_required()
