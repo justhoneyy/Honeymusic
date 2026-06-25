@@ -130,8 +130,6 @@ def toggle_like(song_id):
 
 @music_bp.route('/liked', methods=['GET'])
 @jwt_required()
-@music_bp.route('/liked', methods=['GET'])
-@jwt_required()
 def get_liked_songs():
     user_id = get_jwt_identity()
     page = request.args.get('page', 1, type=int)
@@ -160,6 +158,7 @@ def get_liked_songs():
         'total': likes.total,
         'pages': likes.pages,
     })
+@music_bp.route('/listen', methods=['POST'])
 @jwt_required()
 def record_listen():
     user_id = get_jwt_identity()
