@@ -5,7 +5,7 @@ from app.models.music import Song
 from app.models.analytics import ListenHistory
 from app.utils.helpers import create_response
 
-player_bp = Blueprint('api.player', __name__)
+player_bp = Blueprint('player', __name__)
 
 @player_bp.route('/queue', methods=['GET'])
 @jwt_required()
