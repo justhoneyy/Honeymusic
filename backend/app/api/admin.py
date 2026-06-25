@@ -10,7 +10,7 @@ from app.models.analytics import ListenHistory, Analytics
 from app.utils.decorators import admin_required
 from app.utils.helpers import create_response
 
-admin_bp = Blueprint('api.admin', __name__)
+admin_bp = Blueprint('admin', __name__)
 
 @admin_bp.route('/dashboard', methods=['GET'])
 @jwt_required()
