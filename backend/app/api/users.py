@@ -8,7 +8,7 @@ from app.extensions import db
 from app.models.user import User, UserPreference
 from app.utils.helpers import create_response, paginate
 
-users_bp = Blueprint('api.users', __name__)
+users_bp = Blueprint('users', __name__)
 
 ALLOWED_AVATAR_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'}
 
