@@ -1,0 +1,4 @@
+# Honey Music - Robots
+User-agent: *
+Allow: /
+Sitemap: https://honeymusic.com/sitemap.xml
