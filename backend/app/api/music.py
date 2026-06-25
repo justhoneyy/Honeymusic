@@ -130,21 +130,29 @@ def toggle_like(song_id):
 
 @music_bp.route('/liked', methods=['GET'])
 @jwt_required()
+@music_bp.route('/liked', methods=['GET'])
+@jwt_required()
 def get_liked_songs():
     user_id = get_jwt_identity()
     page = request.args.get('page', 1, type=int)
     per_page = request.args.get('per_page', 20, type=int)
-    
-    likes = Like.query.filter_by(user_id=user_id)\
-        .order_by(Like.created_at.desc())\
+
+    likes = (
+        Like.query.filter_by(user_id=user_id)
+        .order_by(Like.created_at.desc())
         .paginate(page=page, per_page=per_page, error_out=False)
-  items = []
+    )
+
+    items = []
+
     for like in likes.items:
         item = like.to_dict()
+
         if like.song:
             item['song'] = like.song.to_dict()
+
         items.append(item)
-    
+
     return create_response(data={
         'items': items,
         'page': likes.page,
@@ -152,8 +160,6 @@ def get_liked_songs():
         'total': likes.total,
         'pages': likes.pages,
     })
-
-@music_bp.route('/listen', methods=['POST'])
 @jwt_required()
 def record_listen():
     user_id = get_jwt_identity()
